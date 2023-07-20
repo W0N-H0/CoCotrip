@@ -11,7 +11,7 @@
 ## We are
 | 이원호 | 김세민 |
 | --- | --- |
-| http://github.com/WONHO22 | http://github.com/3kiein |
+| http://github.com/WONHO22 | http://github.com/3kiein |
 
 ## About Project
 ### 격동의 코로나를 극복한 우리에게 선사하는 여행용 만능 계산기
