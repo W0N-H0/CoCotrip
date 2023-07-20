@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: "Bagel Fat One", cursive;
+  font-family: "Nanum Gothic", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: "Bagel Fat One", cursive;
+  font-family: "Nanum Gothic", sans-serif;
+}
