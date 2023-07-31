@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { styled } from "styled-components";
 import country from "../data/country";
 
@@ -22,12 +22,52 @@ const Cointainer = styled.section`
     letter-spacing: 2px;
   }
 
-  > .flags > img {
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    background-color: white;
-    box-shadow: -4px 4px 1px #a8c5c5;
+  > .flags {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    > img {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      background-color: white;
+      box-shadow: -4px 4px 1px #a8c5c5;
+    }
+  }
+`;
+
+const FlagSelect = styled.div`
+  /* width: 200px;
+  padding: 10px;
+  border-radius: 30px;
+  font-size: 1.2em;
+  margin-top: 10px;
+  text-align: center;
+  background-color: #426f6f;
+  color: white;
+  font-weight: 700;
+  box-shadow: -4px 4px 1px #a8c5c5; */
+  width: 200px;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #426f6f;
+  position: absolute;
+  z-index: 1;
+  top: 120px;
+  font-weight: 700;
+  box-shadow: -4px 4px 1px #a8c5c5;
+  color: white;
+  font-size: 1.2em;
+  text-align: center;
+`;
+
+const CountryItem = styled.div`
+  padding: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f2f2f2;
   }
 `;
 
@@ -47,6 +87,31 @@ const CardButton = styled.div`
 `;
 
 function SideBar() {
+  const [flag, setFlag] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [selectedCountryIndex, setSelectedCountryIndex] = useState(0);
+
+  useEffect(() => {
+    // 국기가 바뀔때마다 랜더링해야함
+    if (
+      selectedCountryIndex !== null &&
+      country[selectedCountryIndex] &&
+      country[selectedCountryIndex].name
+    ) {
+      setFlag(country[selectedCountryIndex].name);
+    }
+  }, [selectedCountryIndex]);
+
+  const handleFlagChange = (event, index) => {
+    setFlag(event.target.value);
+    setShowDropdown(false);
+    setSelectedCountryIndex(index);
+  };
+
+  const handleImageClick = () => {
+    setShowDropdown(!showDropdown);
+  };
+
   return (
     <Cointainer>
       <div className="title">
@@ -55,8 +120,20 @@ function SideBar() {
           trip
         </h1>
       </div>
-      <div className="flags">
-        <img src={country[1].url} alt="USA" />
+      <div className="flags" onClick={handleImageClick}>
+        <img src={country[selectedCountryIndex]?.url || ""} alt={flag} />
+        {showDropdown && (
+          <FlagSelect>
+            {country.map((countryItem, index) => (
+              <CountryItem
+                key={countryItem.name}
+                onClick={(event) => handleFlagChange(event, index)}
+              >
+                {countryItem.name}
+              </CountryItem>
+            ))}
+          </FlagSelect>
+        )}
       </div>
       <div className="menu">
         <CardButton backgroundColor="#CDC4E8">환율</CardButton>
