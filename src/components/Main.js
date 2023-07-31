@@ -20,6 +20,8 @@ const Container = styled.div`
 
 const CardsContainer = styled.div``;
 
+// 여기에 SideBar에 작성한 상태들 끌어올려야함 or useContext 써서 전역변수로 만들지 고민
+
 function Main() {
   return (
     <Container>

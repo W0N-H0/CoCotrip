@@ -87,9 +87,10 @@ const CardButton = styled.div`
 `;
 
 function SideBar() {
-  const [flag, setFlag] = useState("");
+  const [flag, setFlag] = useState(""); // 국가이름 상태가 필요한지 고민해보기
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectedCountryIndex, setSelectedCountryIndex] = useState(0);
+  const [currency, setCurrency] = useState(country[0].currency);
 
   useEffect(() => {
     // 국기가 바뀔때마다 랜더링해야함
@@ -99,6 +100,7 @@ function SideBar() {
       country[selectedCountryIndex].name
     ) {
       setFlag(country[selectedCountryIndex].name);
+      setCurrency(country[selectedCountryIndex].currency);
     }
   }, [selectedCountryIndex]);
 
