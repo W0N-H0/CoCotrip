@@ -43,7 +43,7 @@ const UnitConverter = () => {
   const handleSwap = () => {
     setStandardUnit(conversionUnit);
     setConversionUnit(standardUnit);
-    setValue("");
+    // setValue("");
   };
 
   return (
