@@ -15,10 +15,11 @@ const Cointainer = styled.section`
 
   > .title {
     font-family: "Bagel Fat One";
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     text-align: center;
-    text-shadow: 4px 4px 1px rgba(168, 197, 197, 1);
-    color: #707b7b;
+    text-shadow: -4px 4px 1px #a8c5c5;
+    color: #426f6f;
+    letter-spacing: 2px;
   }
 
   > .flags > img {
@@ -26,6 +27,7 @@ const Cointainer = styled.section`
     height: 100px;
     border-radius: 100%;
     background-color: white;
+    box-shadow: -4px 4px 1px #a8c5c5;
   }
 `;
 
@@ -40,6 +42,8 @@ const CardButton = styled.div`
   font-size: 1.5em;
   color: white;
   font-weight: 900;
+  /* box-shadow: 3px -3px 2px #a8c5c5; */
+  box-shadow: 5px 5px 10px -5px gray inset;
 `;
 
 function SideBar() {
