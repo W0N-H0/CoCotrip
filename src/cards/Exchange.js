@@ -3,7 +3,7 @@ import axios from "axios";
 
 // 여기서 Main 컴포넌트에서 받은 국가 명을 props로 전달받아
 // exchangeRate 부분과 단위 정도만 수정해주면 됨
-const Exchange = () => {
+const Exchange = ({ currency }) => {
   const [data, setData] = useState(null);
   const [inputValue, setInputValue] = useState("");
   const [result, setResult] = useState("");
@@ -48,7 +48,7 @@ const Exchange = () => {
     <>
       <div>
         <input type="number" value={inputValue} onChange={handleInputChange} />
-        <div>달러</div>
+        <div>{currency}</div>
       </div>
       <div>
         <div>{result}</div>

@@ -86,34 +86,13 @@ const CardButton = styled.div`
   box-shadow: 5px 5px 10px -5px gray inset;
 `;
 
-function SideBar() {
-  const [flag, setFlag] = useState(""); // 국가이름 상태가 필요한지 고민해보기
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [selectedCountryIndex, setSelectedCountryIndex] = useState(0);
-  const [currency, setCurrency] = useState(country[0].currency);
-
-  useEffect(() => {
-    // 국기가 바뀔때마다 랜더링해야함
-    if (
-      selectedCountryIndex !== null &&
-      country[selectedCountryIndex] &&
-      country[selectedCountryIndex].name
-    ) {
-      setFlag(country[selectedCountryIndex].name);
-      setCurrency(country[selectedCountryIndex].currency);
-    }
-  }, [selectedCountryIndex]);
-
-  const handleFlagChange = (event, index) => {
-    setFlag(event.target.value);
-    setShowDropdown(false);
-    setSelectedCountryIndex(index);
-  };
-
-  const handleImageClick = () => {
-    setShowDropdown(!showDropdown);
-  };
-
+function SideBar({
+  flag,
+  showDropdown,
+  selectedCountryIndex,
+  handleFlagChange,
+  handleImageClick,
+}) {
   return (
     <Cointainer>
       <div className="title">
