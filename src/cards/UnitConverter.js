@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Tabs, Select } from "antd";
-import Converter from "./Converter";
+import Converter from "../components/Converter";
 
 const { TabPane } = Tabs;
 const { Option } = Select;
