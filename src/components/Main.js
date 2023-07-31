@@ -8,18 +8,29 @@ import DiscountRate from "../cards/DiscountRate";
 import UnitConverter from "../cards/UnitConverter";
 import Tip from "../cards/Tip";
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fcf4e7;
+  width: 100vw;
+  height: 100vh;
+`;
+
+const CardsContainer = styled.div``;
+
 function Main() {
   return (
-    <div>
-      메인
+    <Container>
       <SideBar />
-      <div>
+      <CardsContainer>
         <Exchange></Exchange>
-        <DiscountRate></DiscountRate>
-        <UnitConverter></UnitConverter>
         <Tip></Tip>
-      </div>
-    </div>
+        <UnitConverter></UnitConverter>
+        <DiscountRate></DiscountRate>
+      </CardsContainer>
+    </Container>
   );
 }
 
