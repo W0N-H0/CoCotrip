@@ -73,7 +73,7 @@ const ExchangeWrap = styled.div`
 `
 // 여기서 Main 컴포넌트에서 받은 국가 명을 props로 전달받아
 // exchangeRate 부분과 단위 정도만 수정해주면 됨
-const Exchange = () => {
+const Exchange = ({ currency }) => {
   const [data, setData] = useState(null);
   const [inputValue, setInputValue] = useState("");
   const [result, setResult] = useState("");
@@ -119,6 +119,7 @@ const Exchange = () => {
       <h1>환율</h1>
       <div>
         <input type="number" value={inputValue} onChange={handleInputChange} />
+
         <div className="changeBtn">
           <span> ₩ (원) </span>
         </div>
@@ -135,7 +136,7 @@ const Exchange = () => {
         <div>{result}</div>
         <input type="number" value={inputValue} onChange={handleInputChange} />
         <div className="changeBtn">
-          <span> $ (달러) </span>
+          <div>{currency}</div>
         </div>
       </div>
       <h2>실시간 환율이 아니니 주의 바랍니다.</h2>

@@ -14,20 +14,20 @@ import 독일 from "./imgs/독일.gif";
 import 인도 from "./imgs/인도.gif";
 
 const country = [
-  { name: "미국", url: 미국 },
-  { name: "일본", url: 일본 },
-  { name: "중국", url: 중국 },
-  { name: "필리핀", url: 필리핀 },
-  { name: "베트남", url: 베트남 },
-  { name: "태국", url: 태국 },
-  { name: "싱가포르", url: 싱가포르 },
-  { name: "인도네시아", url: 인도네시아 },
-  { name: "캐나다", url: 캐나다 },
-  { name: "말레이시아", url: 말레이시아 },
-  { name: "미얀마", url: 미얀마 },
-  { name: "오스트리아", url: 오스트리아 },
-  { name: "독일", url: 독일 },
-  { name: "인도", url: 인도 },
+  { name: "미국", url: 미국, tip: true, currency: "USD" },
+  { name: "일본", url: 일본, tip: false, currency: "JPY" },
+  { name: "중국", url: 중국, tip: false, currency: "CNY" },
+  { name: "필리핀", url: 필리핀, tip: true, currency: "PHP" },
+  { name: "베트남", url: 베트남, tip: true, currency: "VND" },
+  { name: "태국", url: 태국, tip: true, currency: "THB" },
+  { name: "싱가포르", url: 싱가포르, tip: true, currency: "SGD" },
+  { name: "인도네시아", url: 인도네시아, tip: false, currency: "IDR" },
+  { name: "캐나다", url: 캐나다, tip: true, currency: "CAD" },
+  { name: "말레이시아", url: 말레이시아, tip: true, currency: "MYR" },
+  { name: "미얀마", url: 미얀마, tip: true, currency: "MMK" },
+  { name: "오스트리아", url: 오스트리아, tip: true, currency: "AUD" },
+  { name: "독일", url: 독일, tip: true, currency: "EUR" },
+  { name: "인도", url: 인도, tip: false, currency: "INR" },
 ];
 
 export default country;
