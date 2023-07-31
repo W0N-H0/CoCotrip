@@ -2,7 +2,7 @@ import React from "react";
 import SideBar from "./SideBar";
 import Exchange from "../cards/Exchange";
 import DiscountRate from "../cards/DiscountRate";
-import Converter from "../cards/Converter";
+import UnitConverter from "../cards/UnitConverter";
 import Tip from "../cards/Tip";
 
 function Main() {
@@ -13,7 +13,7 @@ function Main() {
       <div>
         <Exchange></Exchange>
         <DiscountRate></DiscountRate>
-        <Converter></Converter>
+        <UnitConverter></UnitConverter>
         <Tip></Tip>
       </div>
     </div>
