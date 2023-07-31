@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-
 import { styled } from "styled-components";
-
 import SideBar from "./SideBar";
 import Exchange from "../cards/Exchange";
 import DiscountRate from "../cards/DiscountRate";
@@ -13,14 +11,19 @@ import country from "../data/country";
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
   background-color: #fcf4e7;
   width: 100vw;
   height: 100vh;
 `;
 
-const CardsContainer = styled.div``;
+const CardsContainer = styled.div`
+  width: calc(100vw / 4 );
+  height: calc(100vh * 0.8);
+  display: flex;
+    flex-wrap: wrap;
+`;
 
 function Main() {
   // 여기에 SideBar에 작성한 상태들 끌어올려야함 or useContext 써서 전역변수로 만들지 고민
@@ -61,10 +64,10 @@ function Main() {
         handleImageClick={handleImageClick}
       />
       <CardsContainer>
-        <Exchange currency={currency}></Exchange>
-        <Tip></Tip>
-        <UnitConverter></UnitConverter>
-        <DiscountRate></DiscountRate>
+        <Exchange currency={currency} />
+        <Tip />
+        <UnitConverter />
+        <DiscountRate />
       </CardsContainer>
     </Container>
   );

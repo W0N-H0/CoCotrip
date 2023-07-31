@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 import { Tabs, Select } from "antd";
 import Converter from "../components/Converter";
+import { styled } from "styled-components";
+
+const UnitConverterWrap = styled.div`
+  width: 554px;
+  height: 370px;
+  border-radius: 30px;
+  background: #DEEAFC;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.20);
+`
 
 const { TabPane } = Tabs;
 const { Option } = Select;
@@ -47,7 +56,7 @@ const UnitConverter = () => {
   };
 
   return (
-    <div>
+    <UnitConverterWrap>
       <h2>단위 계산기</h2>
       <Tabs activeKey={units[0]} onChange={handleCategoryChange}>
         {Object.keys(units).map((categoryKey) => (
@@ -69,7 +78,7 @@ const UnitConverter = () => {
           </TabPane>
         ))}
       </Tabs>
-    </div>
+    </UnitConverterWrap>
   );
 };
 
