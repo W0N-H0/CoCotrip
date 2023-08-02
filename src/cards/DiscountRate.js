@@ -2,12 +2,12 @@ import React, { useState, useRef } from "react";
 import { styled } from "styled-components";
 
 const DiscountRateWrap = styled.div`
-  width: 554px;
+  width: 630px;
   height: 370px;
   border-radius: 30px;
-  background: #FEE5DD;
-  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.20);
-`
+  background: #fee5dd;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.2);
+`;
 // 할인율 입력하는 인풋박스를 div태그로 만든 버전
 const DiscountRate = () => {
   const [amount, setAmount] = useState(0);

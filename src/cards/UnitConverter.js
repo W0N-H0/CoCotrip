@@ -4,12 +4,52 @@ import Converter from "../components/Converter";
 import { styled } from "styled-components";
 
 const UnitConverterWrap = styled.div`
-  width: 554px;
+  width: 630px;
   height: 370px;
   border-radius: 30px;
-  background: #DEEAFC;
-  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.20);
-`
+  padding: 20px;
+  background: #deeafc;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.2);
+  > h1 {
+    font: bold 35px Nanum Gothic;
+    background-color: #465264;
+    color: transparent;
+    text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.5);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    margin: 10px 0px 5px 20px;
+  }
+  .ant-tabs-ink-bar {
+    border-bottom: 10px solid #ea5130;
+    border-radius: 10px;
+  }
+
+  .ant-tabs-nav-list {
+    width: 100%;
+    background-color: white;
+    border-radius: 30px;
+    margin: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  }
+  .ant-tabs-tab {
+    width: 20%;
+    justify-content: center;
+    font-size: 18px;
+    font-family: "Nanum Gothic";
+    font-weight: 800;
+    &.ant-tabs-tab-active {
+      > .ant-tabs-tab-btn {
+        color: #ea5130;
+      }
+    }
+    &:hover {
+      color: #ea5130;
+    }
+  }
+`;
 
 const { TabPane } = Tabs;
 const { Option } = Select;
@@ -57,7 +97,7 @@ const UnitConverter = () => {
 
   return (
     <UnitConverterWrap>
-      <h2>단위 계산기</h2>
+      <h1>단위</h1>
       <Tabs activeKey={units[0]} onChange={handleCategoryChange}>
         {Object.keys(units).map((categoryKey) => (
           <TabPane

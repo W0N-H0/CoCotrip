@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { styled } from "styled-components";
 
+import exchange from "../data/imgs/exchange.png";
+
 const ExchangeWrap = styled.div`
   width: 630px;
   height: 370px;
@@ -17,7 +19,7 @@ const ExchangeWrap = styled.div`
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
-    margin: 20px 0px 30px 20px;
+    margin: 10px 0px 30px 20px;
   }
   > .inputContainer {
     display: flex;
@@ -169,7 +171,7 @@ const Exchange = ({ flag, currency }) => {
 
       <div className="exchangeBtnWrap">
         <button className="exchangeBtn">
-          <img src="/images/exchange.png" alt="변환버튼" />
+          <img src={exchange} alt="변환버튼" />
         </button>
         <button className="exchangeText" onClick={handleExchange}>
           exchange

@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 import { styled } from "styled-components";
 
 const TipWrap = styled.div`
-  width: 554px;
+  width: 630px;
   height: 370px;
   border-radius: 30px;
-  background: #CCE6CD;
-  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.20); 
-`
-
-
+  background: #cce6cd;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.2);
+`;
 
 // 여기서 추가할꺼는, 단위 원 말고, 나라 선택시 props를 받아서 해당 국가의 통화로 표시해야함
 const Tip = () => {
