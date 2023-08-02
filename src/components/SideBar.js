@@ -8,14 +8,14 @@ const Cointainer = styled.section`
   background-color: #cbe5e5;
   justify-content: space-around;
   align-items: center;
-  width: calc(100vw / 6);
+  width: calc(100vw / 3);
   height: calc(100vh * 0.8);
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
 
   > .title {
     font-family: "Bagel Fat One";
-    font-size: 2.8rem;
+    font-size: 3.5rem;
     text-align: center;
     text-shadow: -4px 4px 1px #a8c5c5;
     color: #426f6f;
@@ -28,8 +28,8 @@ const Cointainer = styled.section`
     justify-content: center;
     align-items: center;
     > img {
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       border-radius: 100%;
       background-color: white;
       box-shadow: -4px 4px 1px #a8c5c5;
@@ -58,7 +58,7 @@ const FlagSelect = styled.div`
   font-weight: 700;
   box-shadow: -4px 4px 1px #a8c5c5;
   color: white;
-  font-size: 1.2em;
+  font-size: 1.3em;
   text-align: center;
 `;
 
@@ -72,18 +72,21 @@ const CountryItem = styled.div`
 `;
 
 const CardButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: ${(props) => props.backgroundColor || ""};
   padding: 10px;
   margin-bottom: 35px;
   text-align: center;
-  width: 200px;
+  width: 240px;
   height: 50px;
   border-radius: 30px;
-  font-size: 1.5em;
+  font-size: 1.7em;
   color: white;
   font-weight: 900;
-  /* box-shadow: 3px -3px 2px #a8c5c5; */
-  box-shadow: 5px 5px 10px -5px gray inset;
+  box-shadow: 3px -3px 2px #a8c5c5;
+  /* box-shadow: 5px 5px 10px -5px gray inset;  클릭시 이 그림자 값으로*/
 `;
 
 function SideBar({
@@ -117,10 +120,10 @@ function SideBar({
         )}
       </div>
       <div className="menu">
-        <CardButton backgroundColor="#CDC4E8">환율</CardButton>
+        <CardButton backgroundColor="#CDC4E8">환 율</CardButton>
         <CardButton backgroundColor="#CCE6CD">팁</CardButton>
-        <CardButton backgroundColor="#C9D9F0">단위</CardButton>
-        <CardButton backgroundColor="#EFDAD3">할인율</CardButton>
+        <CardButton backgroundColor="#C9D9F0">단 위</CardButton>
+        <CardButton backgroundColor="#EFDAD3">할 인 율</CardButton>
       </div>
     </Cointainer>
   );

@@ -12,17 +12,20 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #fcf4e7;
   width: 100vw;
   height: 100vh;
 `;
 
 const CardsContainer = styled.div`
-  width: calc(100vw / 4 );
   height: calc(100vh * 0.8);
   display: flex;
-    flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
+  > div {
+    margin: 0px 0px 40px 90px;
+  }
 `;
 
 function Main() {
@@ -64,7 +67,7 @@ function Main() {
         handleImageClick={handleImageClick}
       />
       <CardsContainer>
-        <Exchange currency={currency} />
+        <Exchange flag={flag} currency={currency} />
         <Tip />
         <UnitConverter />
         <DiscountRate />
