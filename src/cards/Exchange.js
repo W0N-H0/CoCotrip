@@ -1,8 +1,22 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { styled } from "styled-components";
+import { keyframes, styled } from "styled-components";
 
 import exchange from "../data/imgs/exchange.png";
+
+const loadEffect1 = keyframes`
+  0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+`;
+const Top = styled.div`
+  > .mount1 {
+    animation: ${loadEffect1} 3s 0s infinite linear alternate;
+  }
+`;
 
 const ExchangeWrap = styled.div`
   width: 630px;
@@ -11,6 +25,9 @@ const ExchangeWrap = styled.div`
   padding: 20px;
   background: #e0d4e2;
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   > h1 {
     font: bold 35px Nanum Gothic;
     background-color: #6d4374;
@@ -98,13 +115,13 @@ const ExchangeWrap = styled.div`
     font-weight: 900;
     line-height: 150%; /* 21px */
     letter-spacing: -0.154px;
-    margin: 25px 0 0 180px;
+    margin: 15px 0 5px 180px;
   }
 `;
 
 // 여기서 Main 컴포넌트에서 받은 국가 명을 props로 전달받아
 // exchangeRate 부분과 단위 정도만 수정해주면 됨
-const Exchange = ({ flag, currency }) => {
+const Exchange = ({ flag, currency, isClicked1, a }) => {
   const [data, setData] = useState(null);
   const [inputValue, setInputValue] = useState("");
   const [result, setResult] = useState("");
@@ -156,36 +173,46 @@ const Exchange = ({ flag, currency }) => {
   };
 
   return (
-    <ExchangeWrap>
-      <h1>환율</h1>
+    <Top className="mount1">
+      {isClicked1 ? (
+        <ExchangeWrap>
+          <h1>환율</h1>
 
-      <div className="inputContainer">
-        <input type="number" value={inputValue} onChange={handleInputChange} />
+          <div className="inputContainer">
+            <input
+              type="number"
+              value={inputValue}
+              onChange={handleInputChange}
+            />
 
-        <div className="unitWrap">
-          <span>
-            {currency.sign} ({currency.kr})
-          </span>
-        </div>
-      </div>
+            <div className="unitWrap">
+              <span>
+                {currency.sign} ({currency.kr})
+              </span>
+            </div>
+          </div>
 
-      <div className="exchangeBtnWrap">
-        <button className="exchangeBtn">
-          <img src={exchange} alt="변환버튼" />
-        </button>
-        <button className="exchangeText" onClick={handleExchange}>
-          exchange
-        </button>
-      </div>
+          <div className="exchangeBtnWrap">
+            <button className="exchangeBtn">
+              <img src={exchange} alt="변환버튼" />
+            </button>
+            <button className="exchangeText" onClick={handleExchange}>
+              exchange
+            </button>
+          </div>
 
-      <div className="inputContainer">
-        <input type="text" value={result} />
-        <div className="unitWrap">
-          <span>₩ (원)</span>
-        </div>
-      </div>
-      <h2>실시간 환율이 아니니 주의 바랍니다.</h2>
-    </ExchangeWrap>
+          <div className="inputContainer">
+            <input type="text" value={result} />
+            <div className="unitWrap">
+              <span>₩ (원)</span>
+            </div>
+          </div>
+          <h2>실시간 환율이 아니니 주의 바랍니다.</h2>
+        </ExchangeWrap>
+      ) : (
+        "안됨"
+      )}
+    </Top>
   );
 };
 

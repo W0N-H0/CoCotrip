@@ -35,6 +35,12 @@ function Main() {
   const [selectedCountryIndex, setSelectedCountryIndex] = useState(0);
   const [currency, setCurrency] = useState(country[0].currency);
 
+  const [isClicked1, setIsClicked1] = useState(false);
+  const [isClicked2, setIsClicked2] = useState(false);
+  const [isClicked3, setIsClicked3] = useState(false);
+  const [isClicked4, setIsClicked4] = useState(false);
+  const [a, setA] = useState([isClicked1, isClicked3]);
+
   useEffect(() => {
     // 국기가 바뀔때마다 랜더링해야함
     if (
@@ -57,6 +63,19 @@ function Main() {
     setShowDropdown(!showDropdown);
   };
 
+  const handleCardClick = (index) => {
+    if (index === 1) {
+      setIsClicked1(!isClicked1);
+    } else if (index === 2) {
+      setIsClicked2(!isClicked2);
+    } else if (index === 3) {
+      setIsClicked3(!isClicked3);
+    } else if (index === 4) {
+      setIsClicked4(!isClicked4);
+    }
+    setA([isClicked1, isClicked3]);
+  };
+
   return (
     <Container>
       <SideBar
@@ -65,9 +84,15 @@ function Main() {
         selectedCountryIndex={selectedCountryIndex}
         handleFlagChange={handleFlagChange}
         handleImageClick={handleImageClick}
+        handleCardClick={handleCardClick}
       />
       <CardsContainer>
-        <Exchange flag={flag} currency={currency} />
+        <Exchange
+          flag={flag}
+          currency={currency}
+          isClicked1={isClicked1}
+          a={a}
+        />
         <Tip />
         <UnitConverter />
         <DiscountRate />

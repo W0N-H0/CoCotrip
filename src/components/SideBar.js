@@ -95,6 +95,7 @@ function SideBar({
   selectedCountryIndex,
   handleFlagChange,
   handleImageClick,
+  handleCardClick,
 }) {
   return (
     <Cointainer>
@@ -120,10 +121,30 @@ function SideBar({
         )}
       </div>
       <div className="menu">
-        <CardButton backgroundColor="#CDC4E8">환 율</CardButton>
-        <CardButton backgroundColor="#CCE6CD">팁</CardButton>
-        <CardButton backgroundColor="#C9D9F0">단 위</CardButton>
-        <CardButton backgroundColor="#EFDAD3">할 인 율</CardButton>
+        <CardButton
+          backgroundColor="#CDC4E8"
+          onClick={() => handleCardClick(1)}
+        >
+          환 율
+        </CardButton>
+        <CardButton
+          backgroundColor="#CCE6CD"
+          onClick={() => handleCardClick(2)}
+        >
+          팁
+        </CardButton>
+        <CardButton
+          backgroundColor="#C9D9F0"
+          onClick={() => handleCardClick(3)}
+        >
+          단 위
+        </CardButton>
+        <CardButton
+          backgroundColor="#EFDAD3"
+          onClick={() => handleCardClick(4)}
+        >
+          할 인 율
+        </CardButton>
       </div>
     </Cointainer>
   );
